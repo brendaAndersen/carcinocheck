@@ -1,1 +1,1 @@
-# carcinocheck
+# carcino-ai
