@@ -21,7 +21,7 @@ const nextConfig = {
       },
       {
         source: "/api/proxy/:param*",
-        destinatWion: "http://54.232.150.57/v1/:param*",
+        destination: "http://54.232.150.57/v1/:param*",
       },
       {
         source: "/api/proxy/files/upload",
