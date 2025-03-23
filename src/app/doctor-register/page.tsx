@@ -3,10 +3,18 @@
 import { Header } from "@/components/header";
 import { ThemeToggle } from "@/components/Toggle";
 import Link from "next/link";
-// import { LuPickaxe } from "react-icons/lu";
 import Layout from "@/components/layout";
 import Image from 'next/image'
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
+import { JSX, useState } from "react";
+import axios from "axios";
+
+interface State {
+    id: {
+        "ISO-ALPHA-2": string;
+    };
+    nome: string;
+}
 
 type Doctor = {
     carcinoCheckId: string;
@@ -20,20 +28,26 @@ type Doctor = {
     email: string;
     password: string;
     confirmPassword: string;
-
+    medicalInstitution: string
 }
 
 export default function Login() {
 
     const { register, handleSubmit, formState: { errors } } = useForm<Doctor>();
+    const [states, setStates] = useState<State[]>([]);
+    const [selectedCountry, setSelectedCountry] = useState('br');
 
     const onSubmit: SubmitHandler<FieldValues> = (data: FieldValues) => {
-        console.log(data);
-        alert('Estamos em desenvolvimento!')
+        alert('Estamos em desenvolvimento!');
+        console.log(data)
     }
-    // const fetchCountries = () => {
-    //     // https://servicodados.ibge.gov.br/api/v1/localidades/paises
-    // }
+
+    const fetchState = async () => {
+        await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/paises').then(async (response) => {
+            // setStates(Object.values(response.data).map((state) => state))
+            setStates(Object.values(response.data) as State[]);
+        });
+    }
     return (<Layout>
         <Header>
             <nav className="flex gap-5 w-full justify-center">
@@ -48,10 +62,8 @@ export default function Login() {
         </Header>
         <div className="bg-banner dark:bg-none bg-cover bg-center flex justify-center items-center text-center w-screen min-h-[calc(100vh-90px)] gap-y-5">
             <div className="animate-slide-down gap-5 flex items-center">
-                {/* <h1>Em desenvolvimento</h1>
-                <LuPickaxe /> */}
-                <div className=" sm:hidden lg:block hidden text-left items-start text-slate-600">
-                    <div className="gap-5 grid p-5">
+                <div className="gap-5 sm:hidden lg:block hidden text-left items-start text-slate-600">
+                    <div className="gap-5 grid p-5 lg:max-w-md max-w-sm">
                         <p className="text-lg">
                             It is a pleasure to welcome you to our Carcinocheck doctor registration platform.
                         </p>
@@ -69,12 +81,13 @@ export default function Login() {
                         />
                     </div>
                 </div>
-                <div className="w-full gap-5 pt-10">
+                <div className="w-38 lg:w-[70rem] md:w-[40rem] gap-5 pt-10 max-w-[100%]">
                     <form
-                        className="py-6 lg:grid lg:grid-cols-2 gap-2 bg-gray-100 dark:bg-gray-900 shadow-md rounded px-8 pt-24 pb-8 mb-4 lg:max-w-4xl w-full"
+                        className="py-6 lg:grid lg:grid-cols-2 gap-2 bg-gray-100 dark:bg-gray-900 shadow-md rounded px-4 pt-24 pb-8 lg:max-w-4xl w-full"
                         onSubmit={handleSubmit(onSubmit)}>
-                        <h1 className="text-2xl animate-slide-down text-gray-600 dark:text-slate-300">Doctor Register</h1>
-                        {/* First Column */}
+                        <div className="mb-6">
+                            <h1 className="text-2xl animate-slide-down text-gray-600 dark:text-slate-300">Doctor Register</h1>
+                        </div>
                         <div className="mb-4">
                             <label className="block text-gray-500 text-sm font-bold mb-2 text-left" htmlFor="firstName">
                                 First Name
@@ -86,7 +99,6 @@ export default function Login() {
                                 type="text"
                                 name="firstName"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="First Name"
                             />
                             {errors?.firstName && <p className="text-red-500 text-xs italic">{errors?.firstName?.message}</p>}
                         </div>
@@ -101,11 +113,28 @@ export default function Login() {
                                 type="text"
                                 name="lastName"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="Last Name"
                             />
                             {errors?.lastName && <p className="text-red-500 text-xs italic">{errors?.lastName?.message}</p>}
                         </div>
-
+                        <div className="max-w-50 mb-4 overflow-hidden">
+                            <label className="block text-gray-500 text-sm font-bold mb-2 text-left" htmlFor="lastName">
+                                Country
+                            </label>
+                            <select
+                                onChange={(e) => setSelectedCountry(e?.target?.value.toLowerCase())}
+                                onClick={() => fetchState()}
+                                name="country"
+                                id="country"
+                                className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            >
+                                {states.map<JSX.Element>((state: State, index: number) => (
+                                    <option key={index} value={state?.id["ISO-ALPHA-2"]}>
+                                        {state.nome}
+                                    </option>
+                                ))}
+                            </select>
+                            {errors?.country && <p className="text-red-500 text-xs italic">{errors?.country?.message}</p>}
+                        </div>
                         <div className="mb-4">
                             <label className="block text-gray-500 text-sm font-bold mb-2 text-left" htmlFor="email">
                                 Email
@@ -116,7 +145,6 @@ export default function Login() {
                                 type="email"
                                 name="email"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="Email"
                             />
                             {errors?.email && <p className="text-red-500 text-xs italic">{errors?.email?.message}</p>}
                         </div>
@@ -131,7 +159,6 @@ export default function Login() {
                                 type="text"
                                 name="nationalIdentityDocument"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="National Identity Document"
                             />
                             {errors?.nationalIdentityDocument && <p className="text-red-500 text-xs italic">{errors?.nationalIdentityDocument?.message}</p>}
                         </div>
@@ -146,12 +173,10 @@ export default function Login() {
                                 type="text"
                                 name="medicalRecordNumber"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="Medical Record Number"
                             />
                             {errors?.medicalRecordNumber && <p className="text-red-500 text-xs italic">{errors?.medicalRecordNumber?.message}</p>}
                         </div>
 
-                        {/* Second Column */}
                         <div className="mb-4">
                             <label className="block text-gray-500 text-sm font-bold mb-2 text-left" htmlFor="password">
                                 Password
@@ -162,7 +187,6 @@ export default function Login() {
                                 type="password"
                                 name="password"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="Password"
                             />
                             {errors?.password && <p className="text-red-500 text-xs italic">{errors?.password?.message}</p>}
                         </div>
@@ -177,7 +201,6 @@ export default function Login() {
                                 type="password"
                                 name="confirmPassword"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="Confirm Password"
                             />
                             {errors?.confirmPassword && <p className="text-red-500 text-xs italic">{errors?.confirmPassword?.message}</p>}
                         </div>
@@ -192,18 +215,27 @@ export default function Login() {
                                 type="text"
                                 name="address"
                                 className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            // placeholder="Address"
                             />
                             {errors?.address && <p className="text-red-500 text-xs italic">{errors?.address?.message}</p>}
                         </div>
-                        <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden shadow-sm mb-8">
+                        <div className="mb-4">
+                            <label className="block text-gray-500 text-sm font-bold mb-2 text-left" htmlFor="firstName">
+                                Medical Institution
+                            </label>
+
+                            <input
+                                id="medicalInstitution"
+                                {...register("medicalInstitution", { required: 'Este campo é obrigatório' })}
+                                type="text"
+                                name="medicalInstitution"
+                                className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                            />
+                            {errors?.medicalInstitution && <p className="text-red-500 text-xs italic">{errors?.medicalInstitution?.message}</p>}
+                        </div>
+                        <div className="flex h-12 items-center mt-6 border border-gray-300 rounded-lg overflow-hidden shadow-sm mb-8">
 
                             <span className="bg-transparent dark:bg-gray-800 flex items-center justify-center px-3 border-r border-gray-300">
-                                <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" className="w-6 h-4" />
-                                {/* <Image
-                                    width={30}
-                                    height={30}
-                                    src={"https://flagcdn.com/w40/br.png"} alt={""} /> */}
+                                <img src={`https://flagcdn.com/16x12/${selectedCountry}.png`} alt="Brazil Flag" className="w-6 h-4" />
                             </span>
 
                             <input
