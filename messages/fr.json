@@ -1,0 +1,33 @@
+{
+    "Home": {
+        "title": "Montrer la voie de",
+        "titleS": "l'oncologie médicale",
+        "titleT": "d'excellence",
+        "first": "Œuvrer pour une vie meilleure",
+        "third": "La médecine n'a cessé d'être transformée par l'innovation technologique, l'intelligence artificielle (IA) s'impose désormais comme l'un des principaux outils d'optimisation des diagnostics et des traitements.",
+        "four": "Dans une avancée médicale sans précédent, le premier système d'IA au monde a été développé et certifié, avec des informations scientifiques validées par les professionnels les plus respectés au niveau mondial, dédié à l'aide au diagnostic et au traitement de la carcinose péritonéale, une maladie oncologique complexe et difficile à traiter.",
+        "rights": "Carcinocheck et Pipac Brasil - Tous droits réservés",
+        "home": "Accueil",
+        "dLogin": "Connexion médecin",
+        "pLogin": "Connexion patient",
+        "dRegister": "Inscription médecin",
+        "lDescription": "Entrez votre identifiant Carcinocheck et mot de passe",
+        "lSecondDescription": "pour accéder à l'espace médecin.",
+        "pLoginDesc": "Entrez votre numéro de patient et mot de passe",
+        "pLoginSecondDesc": "pour accéder à votre espace patient.",
+        "doctorRegisterFirstDesc": "Nous sommes ravis de vous accueillir sur notre plateforme d'inscription Carcinocheck.",
+        "doctorRegisterSecDesc": "Votre expertise et votre engagement seront précieux pour notre communauté et pour les patients nécessitant des soins spécialisés.",
+        "name": "Prénom",
+        "lastName": "Nom",
+        "country": "Pays",
+        "email": "E-mail",
+        "nationalId": "Numéro d'identité national",
+        "medicalRecord": "Numéro d'enregistrement médical",
+        "password": "Mot de passe",
+        "confirmPassword": "Confirmation du mot de passe",
+        "address": "Adresse",
+        "medicalInstitution": "Établissement de santé",
+        "register": "S'inscrire",
+        "signIn": "Se connecter"
+    }
+}

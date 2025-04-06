@@ -1,0 +1,33 @@
+{
+    "Home": {
+        "title": "Liderando o caminho",
+        "titleS": "na excelência médica",
+        "titleT": "oncológica",
+        "first": "Cuidando para uma vida melhor",
+        "third": "A medicina tem sido constantemente transformada pela inovação tecnológica, com a Inteligência Artificial (IA) se destacando como uma das principais ferramentas para otimizar diagnósticos e tratamentos.",
+        "four": "Em um avanço sem precedentes, o primeiro sistema de IA do mundo foi desenvolvido e certificado, com informações científicas validadas pelos profissionais mais respeitados do mundo, dedicados a auxiliar no diagnóstico e tratamento da carcinomatose peritoneal, uma condição oncológica complexa e desafiadora.",
+        "home": "Home",
+        "dLogin": "Login Doutor",
+        "pLogin": "Login Paciente",
+        "dRegister": "Cadastro Doutor",
+        "lDescription": "Faça login com seu ID do Carcinocheck e senha",
+        "lSecondDescription": "para acessar o painel de doutor.",
+        "pLoginDesc": "Faça login com seu número de paciente e senha",
+        "pLoginSecondDesc": "para acessar o painel de paciente.",
+        "doctorRegisterFirstDesc": "É um prazer recebê-lo em nossa plataforma de registro de médicos Carcinocheck.",
+        "doctorRegisterSecDesc": "Acreditamos que sua experiência e dedicação serão de grande valor para nossa comunidade e para pacientes que necessitam de cuidados especializados.",
+        "name": "Nome",
+        "lastName": "Sobrenome",
+        "country": "País",
+        "email": "E-mail",
+        "nationalId": "Documento Nacional de Identidade",
+        "medicalRecord": "Número do prontuário médico",
+        "password": "Senha",
+        "confirmPassword": "Confirme sua senha",
+        "address": "Endereço",
+        "medicalInstitution": "Instituição médica",
+        "register": "Cadastrar",
+        "signIn": "Entrar",
+        "rights": "Carcinocheck e Pipac Brasil - Todos os Direitos Reservados"
+    }
+}

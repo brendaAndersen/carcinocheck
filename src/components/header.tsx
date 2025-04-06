@@ -6,7 +6,7 @@ type HeaderProps = {
 
 export function Header({ children }: HeaderProps) {
 
-    return (<header className="lg:h-32 bg-blue-600 fixed top-0 left-0 flex items-center justify-between p-5 w-full dark:bg-gray-900 shadow-lg md:pl-64 z-10">
+    return (<header className="lg:h-32 md:gap-10 bg-blue-600 fixed top-0 left-0 flex items-center justify-between p-5 w-full dark:bg-gray-900 shadow-lg md:pl-64 z-10">
         {children}
     </header>
     )

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Footer } from "../Footer";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -24,20 +25,14 @@ export default function layout({
     children,
     showFooter = true
 }: LayoutProps) {
+
     return (
         <div className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
             <main className="flex-grow">
                 {children}
             </main>
             {showFooter && (
-                <footer className="dark:bg-gray-900 text-white bg-blue-600 text-center p-4 justify-items-end z-0">
-                    <p>
-                        Tecnopuc Porto Alegre - Av. Ipiranga, 6681, Porto Alegre, Rio Grande do Sul, Brasil. CEP: 90619-900
-                    </p>
-                    <p>
-                        2022 - {new Date().getFullYear()} Carcinocheck e Pipac Brasil - Todos os Direitos Reservados.
-                    </p>
-                </footer>
+                <Footer />
             )}
         </div>
     );

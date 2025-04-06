@@ -1,3 +1,5 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
 const nextConfig = {
   async headers() {
     return [
@@ -12,7 +14,15 @@ const nextConfig = {
       },
     ];
   },
-
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/us',
+        permanent: true,
+      },
+    ];
+  },
   // async rewrites() {
   //   return [
   //     {
@@ -29,6 +39,11 @@ const nextConfig = {
   //     },
   //   ];
   // },
+  images: {
+    domains: ['flagcdn.com'],
+  },
+
 };
 
-module.exports = nextConfig;
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig);

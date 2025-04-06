@@ -1,0 +1,33 @@
+{
+    "Home": {
+        "title": "Leading the way in",
+        "titleS": "oncology medical",
+        "titleT": "excellence",
+        "first": "Caring for better life",
+        "third": "Medicine has been constantly transformed by technological innovation, with Artificial Intelligence (AI) standing out as one of the main tools for optimizing diagnoses and treatments.",
+        "four": "In an unprecedented advancement, the world's first AI system has been developed and certified, with scientific information validated by the most respected professionals globally, dedicated to assisting in the diagnosis and treatment of peritoneal carcinomatosis, a complex and challenging oncological condition.",
+        "home": "Home",
+        "dLogin": "Doctor Login",
+        "pLogin": "Patient Login",
+        "dRegister": "Doctor Register",
+        "lDescription": "Enter your ID Carcinocheck and password",
+        "lSecondDescription": "to access Doctor panel.",
+        "pLoginDesc": "Enter your patient number and password",
+        "pLoginSecondDesc": "to access Patient panel.",
+        "doctorRegisterFirstDesc": "It is a pleasure to welcome you to our Carcinocheck doctor registration platform.",
+        "doctorRegisterSecDesc": "We believe that your expertise and dedication will be of great value to our community and to patients who require specialized care.",
+        "name": "First Name",
+        "lastName": "Last Name",
+        "country": "Country",
+        "email": "Email",
+        "nationalId": "National Identity Document",
+        "medicalRecord": "Medical Record Number",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "address": "Address",
+        "medicalInstitution": "Medical Institution",
+        "register": "Register",
+        "signIn": "Sign In",
+        "rights": "Carcinocheck and Pipac Brasil - All rights reserved"
+    }
+}

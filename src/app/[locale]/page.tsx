@@ -4,19 +4,31 @@ import Layout from "@/components/layout";
 import { ThemeToggle } from "@/components/Toggle";
 import Link from "next/link";
 import { FaRobot } from "react-icons/fa";
+import { useTranslations } from 'next-intl';
+import { ToggleLanguage } from "@/components/ToggleLanguage";
 import { useRouter } from "next/navigation";
+import { use } from "react";
 
-export default function Page() {
+export type PageParams = {
+    params: {
+        locale: string;
+    };
+};
+
+export default function Page({ params }: { params: Promise<{ locale: string }> }) {
     const router = useRouter();
+    const t = useTranslations('Home');
+    const { locale } = use(params);
 
     return (
         <Layout>
             <Header>
+                <ToggleLanguage />
                 <nav className="flex gap-5 w-full justify-center">
-                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href="/">Home</Link>
-                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href="/login">Doctor Login</Link>
-                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href="/patient-login">Patient Login</Link>
-                    <Link className="text-white bg-blue-700 hover:bg-blue-500 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-md p-2" href="/doctor-register">Doctor Register</Link>
+                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}`}>{t('home')}</Link>
+                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}/login`}>{t('dLogin')}</Link>
+                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}/patient-login`}>{t('pLogin')}</Link>
+                    <Link className="text-white bg-blue-700 hover:bg-blue-500 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-md p-2" href={`/${locale}/doctor-register`}>{t('dRegister')}</Link>
                     <div className="justify-self-end sm:flex items-center lg:flex-none lg:p-4 ml-auto lg:hidden visible ">
                         <ThemeToggle />
                     </div>
@@ -35,22 +47,19 @@ export default function Page() {
                 <div className="pt-16 lg:pt-10 max-w-3xl ">
                     <h4 className="pt-5 animate-slide-down">
                         <span className="animate-slide-down text-sm dark:text-slate-500 text-slate-600">
-                            Caring for better life
+                            {t('first')}
                         </span>
                     </h4>
                     <h1 className="text-5xl font-bold leading-tight ">
-                        <span className="pt-2 animate-slide-down block">Leading the way in</span>
-                        <span className="animate-slide-down block">oncology medical</span>
-                        <span className="animate-slide-down block">excellence</span>
+                        <span className="pt-2 animate-slide-down block">{t('title')}</span>
+                        <span className="animate-slide-down block">{t('titleS')}</span>
+                        <span className="animate-slide-down block">{t('titleT')}</span>
                     </h1>
 
                     <div className="sm:flex sm:items-center lg:grid animate-slide-down text-sm text-slate-500 dark:text-slate-500 leading-relaxed max-w-lg space-y-4 text-justify lg:dark:text-justify">
-                        <p className="p-2">
-                            Medicine has been constantly transformed by technological innovation, with Artificial Intelligence (AI) standing out as one of the main tools for optimizing diagnoses and treatments.
-
-                        </p>
-                        <p className="p-2">
-                            In an unprecedented advancement, the world&apos;s first AI system has been developed and certified, with scientific information validated by the most respected professionals globally, dedicated to assisting in the diagnosis and treatment of peritoneal carcinomatosis, a complex and challenging oncological condition.
+                        <p className="p-2 grid grid-col sm:flex-row sm:gap-5">
+                            <span>{t('third')}</span>
+                            <span>{t('four')}</span>
                         </p>
                     </div>
                 </div>
@@ -62,6 +71,6 @@ export default function Page() {
             </div >
 
 
-        </Layout>
+        </Layout >
     )
 }
