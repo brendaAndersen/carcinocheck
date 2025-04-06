@@ -65,7 +65,7 @@ export default function Page({ params }: { params: Promise<{ locale: string }> }
                 </div>
                 <div className="fixed h-60 lg:h-40 md:h-36 w-full bottom-1 left-2 flex justify-end p-4">
                     <div className="rounded-3xl border-2 border-slate-300 w-10 h-10 hover:scale-125 hover:cursor-pointer flex items-center justify-center">
-                        <FaRobot className="w-7 h-7" onClick={() => router.push("/ai")} />
+                        <FaRobot className="w-7 h-7" onClick={() => router.push(`${locale}/ai`)} />
                     </div>
                 </div>
             </div >
