@@ -23,26 +23,29 @@ const nextConfig = {
       },
     ];
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/api/chat",
-  //       destination: "https://api-principal.com/v1/chat-messages",
-  //     },
-  //     {
-  //       source: "/api/proxy/:param*",
-  //       destination: "http://54.232.150.57/v1/:param*",
-  //     },
-  //     {
-  //       source: "/api/proxy/files/upload",
-  //       destination: "http://54.232.150.57/files/upload",
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/api/chat",
+        destination: "https://api-principal.com/v1/chat-messages",
+      },
+      {
+        source: "/api/proxy/:param*",
+        destination: "http://54.232.150.57/v1/:param*",
+      },
+      {
+        source: "/api/proxy/files/upload",
+        destination: "http://54.232.150.57/files/upload",
+      },
+    ];
+  },
   images: {
     domains: ['flagcdn.com'],
   },
-
+  // i18n: {
+  //   locales: ['us', 'br', 'fr'],
+  //   defaultLocale: 'us',
+  // }
 };
 
 const withNextIntl = createNextIntlPlugin();

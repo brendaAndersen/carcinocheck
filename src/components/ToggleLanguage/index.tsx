@@ -1,13 +1,10 @@
 'use client'
-
-import { useRouter, usePathname } from 'next/navigation'; // Alterado aqui
+import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 export const ToggleLanguage = () => {
     const router = useRouter();
     const pathname = usePathname();
-
-    // const currentPathWithoutLocale = pathname.replace(/^\/(en|pt|fr)/, '');
 
     const languages = [
         { code: 'br', flag: 'br.png', alt: 'Português' },

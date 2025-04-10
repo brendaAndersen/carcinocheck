@@ -18,7 +18,7 @@
         "doctorRegisterFirstDesc": "Nous sommes ravis de vous accueillir sur notre plateforme d'inscription Carcinocheck.",
         "doctorRegisterSecDesc": "Votre expertise et votre engagement seront précieux pour notre communauté et pour les patients nécessitant des soins spécialisés.",
         "name": "Prénom",
-        "lastName": "Nom",
+        "lastName": "Nom de famille",
         "country": "Pays",
         "email": "E-mail",
         "nationalId": "Numéro d'identité national",
@@ -28,6 +28,8 @@
         "address": "Adresse",
         "medicalInstitution": "Établissement de santé",
         "register": "S'inscrire",
-        "signIn": "Se connecter"
+        "signIn": "Se connecter",
+        "closeMenu": "Fermer le menu",
+        "openMenu": "Ouvrir le menu"
     }
 }

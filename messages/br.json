@@ -28,6 +28,16 @@
         "medicalInstitution": "Instituição médica",
         "register": "Cadastrar",
         "signIn": "Entrar",
-        "rights": "Carcinocheck e Pipac Brasil - Todos os Direitos Reservados"
+        "rights": "Carcinocheck e Pipac Brasil - Todos os Direitos Reservados",
+        "closeMenu": "Fechar menu",
+        "openMenu": " Abrir menu"
+    },
+    "Dashboard": {
+        "pacients": "Pacientes",
+        "registerPacients": "Cadastro de Paciente",
+        "viewPacients": "Lista Pacientes",
+        "opinions": "Opiniões",
+        "requestOpinion": "Requisitar outra opinião",
+        "reportOpinion": "Reportar outra opinião"
     }
 }

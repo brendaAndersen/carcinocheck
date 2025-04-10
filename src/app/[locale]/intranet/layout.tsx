@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { config } from '@fortawesome/fontawesome-svg-core'
-import "./globals.css";
+import "./../globals.css";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { routing } from './../../../i18n/routing';
+import { routing } from './../../../../i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
@@ -41,16 +41,10 @@ export default async function RootLayout({
   }
   setRequestLocale(locale);
   return (
-    <html>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
-      >
-        <NextIntlClientProvider>
-          <main className="flex-grow">
-            {children}
-          </main>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider>
+      <main className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen flex-grow`}>
+        {children}
+      </main>
+    </NextIntlClientProvider>
   );
 }

@@ -1,6 +1,6 @@
 'use client'
 import { Chat } from "@/components/Chat";
-import { Header } from "@/components/header";
+import { HeaderAI } from "@/components/header";
 import { ThemeToggle } from "@/components/Toggle";
 import { ChatAI } from "@/components/ui/ChatAI";
 import React, { useState } from 'react';
@@ -10,12 +10,12 @@ export default function Home() {
 
   return (
     <>
-      <Header>
+      <HeaderAI>
         <h1 className="text-white absolute left-1/2 transform -translate-x-1/2 text-center">Welcome!</h1>
         <div className="justify-self-end p-4 ml-auto">
           <ThemeToggle />
         </div>
-      </Header>
+      </HeaderAI>
 
 
       <div className="flex h-screen overflow-x-hidden">

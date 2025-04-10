@@ -30,10 +30,10 @@ export const Chat = () => {
     const handleInitialization = async () => {
         const user = localStorage.getItem('user');
         const params = new URLSearchParams({
-            user: user || "", 
-            limit: "20", 
+            user: user || "",
+            limit: "20",
         });
-        
+
         try {
             const response = await axios.get(
                 `/api/proxy/conversations?${params.toString()}`,

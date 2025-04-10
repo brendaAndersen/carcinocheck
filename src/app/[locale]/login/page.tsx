@@ -1,44 +1,25 @@
 'use client'
 import { Header } from "@/components/header";
 import Layout from "@/components/layout";
-import { ThemeToggle } from "@/components/Toggle";
-import { ToggleLanguage } from "@/components/ToggleLanguage";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { use } from "react";
 
 type Doctor = {
     idCarcinocheck: string;
     password: string;
 }
-export default function Login({ params }: { params: Promise<{ locale: string }> }) {
+export default function Login({ }: { params: Promise<{ locale: string }> }) {
     const { register, handleSubmit, formState: { errors } } = useForm<Doctor>();
 
     const onSubmit: SubmitHandler<FieldValues> = (data: FieldValues) => {
         console.log(data);
         alert('Estamos em desenvolvimento!')
     }
-    const { locale } = use(params);
     const t = useTranslations('Home');
 
     return (
         <Layout>
-            <Header>
-                <ToggleLanguage />
-                <nav className="flex gap-5 w-full justify-center">
-                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}`}>{t('home')}</Link>
-                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}/login`}>{t('dLogin')}</Link>
-                    <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}/patient-login`}>{t('pLogin')}</Link>
-                    <Link className="text-white bg-blue-700 hover:bg-blue-500 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-md p-2" href={`/${locale}/doctor-register`}>{t('dRegister')}</Link>
-                    <div className="justify-self-end sm:flex items-center lg:flex-none lg:p-4 ml-auto lg:hidden visible ">
-                        <ThemeToggle />
-                    </div>
-                </nav>
-                <div className="justify-self-end sm:p-0 lg:p-4 ml-auto invisible lg:visible ">
-                    <ThemeToggle />
-                </div>
-            </Header>
+            <Header />
             <div
                 className={`bg-banner dark:bg-none bg-cover bg-center flex justify-center items-center 
                     text-center w-screen min-h-[calc(100vh-90px)] text-slate-700`}

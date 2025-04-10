@@ -1,30 +1,27 @@
 'use client'
 import { Header } from "@/components/header";
-import { ThemeToggle } from "@/components/Toggle";
-import Link from "next/link";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Layout from "@/components/layout";
-import { ToggleLanguage } from "@/components/ToggleLanguage";
 import { useTranslations } from "next-intl";
-import { use } from "react";
 
 type Patient = {
     patientNumber: string;
     password: string;
 }
-export default function PatientLogin({ params }: { params: Promise<{ locale: string }> }) {
+export default function PatientLogin({ }: { params: Promise<{ locale: string }> }) {
     const { register, handleSubmit, formState: { errors } } = useForm<Patient>();
 
     const onSubmit: SubmitHandler<FieldValues> = (data: FieldValues) => {
         console.log(data);
         alert('Estamos em desenvolvimento!')
     }
-    const { locale } = use(params);
     const t = useTranslations('Home');
 
     return (
         <Layout>
-            <Header>
+            <Header />
+
+            {/* <Header>
                 <ToggleLanguage />
                 <nav className="flex gap-5 w-full justify-center">
                     <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}`}>{t('home')}</Link>
@@ -38,7 +35,7 @@ export default function PatientLogin({ params }: { params: Promise<{ locale: str
                 <div className="justify-self-end sm:p-0 lg:p-4 ml-auto invisible lg:visible ">
                     <ThemeToggle />
                 </div>
-            </Header>
+            </Header> */}
             <div className="bg-banner dark:bg-none bg-cover bg-center flex justify-center items-center 
                     text-center w-screen min-h-[calc(100vh-90px)] gap-5">
                 <form className="flex w-96 p-10 flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>

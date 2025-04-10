@@ -1,11 +1,8 @@
 'use client'
 import { Header } from "@/components/header";
 import Layout from "@/components/layout";
-import { ThemeToggle } from "@/components/Toggle";
-import Link from "next/link";
 import { FaRobot } from "react-icons/fa";
 import { useTranslations } from 'next-intl';
-import { ToggleLanguage } from "@/components/ToggleLanguage";
 import { useRouter } from "next/navigation";
 import { use } from "react";
 
@@ -22,8 +19,8 @@ export default function Page({ params }: { params: Promise<{ locale: string }> }
 
     return (
         <Layout>
-            <Header>
-                <ToggleLanguage />
+            <Header />
+            {/* <ToggleLanguage />
                 <nav className="flex gap-5 w-full justify-center">
                     <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}`}>{t('home')}</Link>
                     <Link className="pt-2 hover:border-slate-300 dark:hover:border-gray-600 hover:border-b-2 border-dotted hover:text-slate-100 text-slate-300 dark:hover:text-slate-500" href={`/${locale}/login`}>{t('dLogin')}</Link>
@@ -36,7 +33,7 @@ export default function Page({ params }: { params: Promise<{ locale: string }> }
                 <div className="justify-self-end sm:p-0 lg:p-4 ml-auto invisible lg:visible ">
                     <ThemeToggle />
                 </div>
-            </Header>
+            </Header> */}
             <div
                 className={`relative bg-banner dark:bg-none bg-cover bg-center h-[600px]
                 flex items-center w-screen 
