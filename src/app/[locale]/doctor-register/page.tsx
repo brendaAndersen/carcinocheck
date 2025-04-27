@@ -95,7 +95,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("firstName", { required: 'Este campo é obrigatório' })}
                                     type="text"
                                     name="firstName"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.firstName && <p className="text-red-500 text-xs italic">{errors?.firstName?.message}</p>}
                             </div>
@@ -109,7 +109,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("lastName", { required: 'Este campo é obrigatório' })}
                                     type="text"
                                     name="lastName"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.lastName && <p className="text-red-500 text-xs italic">{errors?.lastName?.message}</p>}
                             </div>
@@ -141,7 +141,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("email", { required: 'Este campo é obrigatório' })}
                                     type="email"
                                     name="email"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.email && <p className="text-red-500 text-xs italic">{errors?.email?.message}</p>}
                             </div>
@@ -155,7 +155,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("nationalIdentityDocument", { required: 'Este campo é obrigatório' })}
                                     type="text"
                                     name="nationalIdentityDocument"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.nationalIdentityDocument && <p className="text-red-500 text-xs italic">{errors?.nationalIdentityDocument?.message}</p>}
                             </div>
@@ -169,7 +169,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("medicalRecordNumber", { required: 'Este campo é obrigatório' })}
                                     type="text"
                                     name="medicalRecordNumber"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.medicalRecordNumber && <p className="text-red-500 text-xs italic">{errors?.medicalRecordNumber?.message}</p>}
                             </div>
@@ -184,7 +184,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("password", { required: 'Este campo é obrigatório' })}
                                     type="password"
                                     name="password"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.password && <p className="text-red-500 text-xs italic">{errors?.password?.message}</p>}
                             </div>
@@ -198,7 +198,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("confirmPassword", { required: 'Este campo é obrigatório' })}
                                     type="password"
                                     name="confirmPassword"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.confirmPassword && <p className="text-red-500 text-xs italic">{errors?.confirmPassword?.message}</p>}
                             </div>
@@ -213,7 +213,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("address", { required: 'Este campo é obrigatório' })}
                                     type="text"
                                     name="address"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.address && <p className="text-red-500 text-xs italic">{errors?.address?.message}</p>}
                             </div>
@@ -227,7 +227,7 @@ export default function Login({ params }: { params: Promise<{ locale: string }> 
                                     {...register("medicalInstitution", { required: 'Este campo é obrigatório' })}
                                     type="text"
                                     name="medicalInstitution"
-                                    className="bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="outline-none bg-transparent dark:bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                                 />
                                 {errors?.medicalInstitution && <p className="text-red-500 text-xs italic">{errors?.medicalInstitution?.message}</p>}
                             </div>

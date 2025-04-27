@@ -30,7 +30,14 @@
         "signIn": "Entrar",
         "rights": "Carcinocheck e Pipac Brasil - Todos os Direitos Reservados",
         "closeMenu": "Fechar menu",
-        "openMenu": " Abrir menu"
+        "openMenu": " Abrir menu",
+        "forgotPassword": "Esqueceu a senha?",
+        "return": "Voltar para login",
+        "recoverPassword": "Recuperar Senha",
+        "recover": "Recuperar",
+        "sending": "Enviando...",
+        "newPassword": "Nova senha",
+        "descriptionRecover": "Digite sua senha atual e a redefinida"
     },
     "Dashboard": {
         "pacients": "Pacientes",

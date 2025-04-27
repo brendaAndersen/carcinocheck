@@ -30,6 +30,13 @@
         "register": "S'inscrire",
         "signIn": "Se connecter",
         "closeMenu": "Fermer le menu",
-        "openMenu": "Ouvrir le menu"
+        "openMenu": "Ouvrir le menu",
+        "forgotPassword": "mot de passe oublié?",
+        "return": "retour à la connexion",
+        "recoverPassword": "récupérer le mot de passe",
+        "recover": "Réinitialiser",
+        "sending": "Envoi...",
+        "newPassword": "Nouveau mot de passe",
+        "descriptionRecover": "Entrez votre mot de passe actuel et réinitialisez-le"
     }
 }

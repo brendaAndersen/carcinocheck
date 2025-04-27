@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Layout from "@/components/layout";
 import { useTranslations } from "next-intl";
+import { Link } from "../../../../i18n/navigation";
 
 type Patient = {
     patientNumber: string;
@@ -52,7 +53,7 @@ export default function PatientLogin({ }: { params: Promise<{ locale: string }> 
                             {...register("patientNumber", { required: 'Este campo é obrigatório' })}
                             type="text"
                             name="patientNumber"
-                            className="text-black border-gray-300 dark:border-gray-800 dark:text-white block py-4 px- w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:border-violet-250 peer"
+                            className="outline-none text-black border-gray-300 dark:border-gray-800 dark:text-white block py-4 px- w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:border-violet-250 peer"
                             placeholder=" "
                             required
                         />
@@ -67,13 +68,13 @@ export default function PatientLogin({ }: { params: Promise<{ locale: string }> 
                         {errors?.patientNumber && <p>{errors?.patientNumber?.message}</p>}
                     </div>
 
-                    <div className="relative z-0 w-full mb-5 group text-white">
+                    <div className="relative z-0 w-full mb-5 group text-white gap-3 grid">
                         <input
                             id="password"
                             {...register("password", { required: 'Este campo é obrigatório' })}
                             type="password"
                             name="password"
-                            className="dark:text-white text-slate-800 block py-5 px- w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-300 dark:border-gray-800 focus:border-violet-250 peer"
+                            className="outline-none dark:text-white text-slate-800 block py-5 px- w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-300 dark:border-gray-800 focus:border-violet-250 peer"
                             placeholder=" "
                             required
                         />
@@ -86,6 +87,12 @@ export default function PatientLogin({ }: { params: Promise<{ locale: string }> 
                             Password
                         </label>
                         {errors?.password && <p>{errors?.password?.message}</p>}
+
+                        <Link href={`/forgot-password`}>
+                            <span className="text-sm cursor-pointer dark:hover:text-slate-300 hover:text-blue-500 text-slate-500">
+                                {t('forgotPassword')}
+                            </span>
+                        </Link>
                     </div>
 
                     <button className="bg-blue-700 hover:bg-blue-500 text-white dark:hover:bg-slate-600 rounded-md p-2 dark:bg-slate-700" type="submit">{t('signIn')}</button>

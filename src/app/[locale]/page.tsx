@@ -1,10 +1,10 @@
 'use client'
 import { Header } from "@/components/header";
 import Layout from "@/components/layout";
-import { FaRobot } from "react-icons/fa";
+// import { FaRobot } from "react-icons/fa";
 import { useTranslations } from 'next-intl';
-import { useRouter } from "next/navigation";
-import { use } from "react";
+// import { useRouter } from "next/navigation";
+// import { use } from "react";
 
 export type PageParams = {
     params: {
@@ -12,10 +12,10 @@ export type PageParams = {
     };
 };
 
-export default function Page({ params }: { params: Promise<{ locale: string }> }) {
-    const router = useRouter();
+export default function Page() {
+    //const router = useRouter();
     const t = useTranslations('Home');
-    const { locale } = use(params);
+   // const { locale } = use(params);
 
     return (
         <Layout>
@@ -60,11 +60,11 @@ export default function Page({ params }: { params: Promise<{ locale: string }> }
                         </p>
                     </div>
                 </div>
-                <div className="fixed h-60 lg:h-40 md:h-36 w-full bottom-1 left-2 flex justify-end p-4">
+                {/* <div className="fixed h-60 lg:h-40 md:h-36 w-full bottom-1 left-2 flex justify-end p-4">
                     <div className="rounded-3xl border-2 border-slate-300 w-10 h-10 hover:scale-125 hover:cursor-pointer flex items-center justify-center">
                         <FaRobot className="w-7 h-7" onClick={() => router.push(`${locale}/ai`)} />
                     </div>
-                </div>
+                </div> */}
             </div >
 
 
